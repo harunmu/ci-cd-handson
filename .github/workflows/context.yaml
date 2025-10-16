@@ -1,0 +1,11 @@
+name: Contexts
+on: [push]
+jobs:
+    print-context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v5
+            - name: Print contexts
+              run: echo "This job is running in the context of the ${{ github.event_name }} event on branch ${{ github.ref }} by user ${{ github.actor }}."
+        
