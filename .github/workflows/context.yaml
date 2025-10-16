@@ -16,5 +16,5 @@ jobs:
             - name: Print runner contexts
               env:
                 RUNNER_NAME: ${{ runner.name }}
-              run: echo "This job is running on a ${RUNNER_NAME}"
+              run: echo "${RUNNER_NAME}"
         
