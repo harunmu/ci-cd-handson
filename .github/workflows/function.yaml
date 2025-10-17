@@ -9,9 +9,9 @@ jobs:
 
             - name: Use Contains Function
               env:
-                # LABEL: ${{ github.event.issue.labels.*.name }}
+                LABEL: ${{ github.event.issue.labels.*.name }}
                 RESULT: ${{ contains(github.event.issue.labels.*.name, 'bug') }}
-              run: echo "contains 'bug' = ${RESULT}"
+              run: echo " ${LABEL}contains 'bug' = ${RESULT}"
             
             - name: Use Join Function
               env:
