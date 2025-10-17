@@ -16,7 +16,7 @@ jobs:
                 JOINED_URLS: ${{ join(env.HTML_URLS, ',') }}
               run: echo "${JOINED_URLS}"
 
-            -name: Use ToJson Function
+            - name: Use ToJson Function
               env:
                 PAYLOAD: ${{ toJson(github.event) }}
               run: echo "${PAYLOAD}"
