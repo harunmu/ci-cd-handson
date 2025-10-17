@@ -9,14 +9,14 @@ jobs:
 
             - name: Use Contains Function
               env:
-                LABEL: ${{ github.event.issue.labels.*.name }}
-                RESULT: ${{ contains(env.LABEL, 'bug') }}
-              run: echo "${LABEL} contains 'bug' = ${RESULT}"
+                # LABEL: ${{ github.event.issue.labels.*.name }}
+                RESULT: ${{ contains(github.event.issue.labels.*.name, 'bug') }}
+              run: echo "contains 'bug' = ${RESULT}"
             
             - name: Use Join Function
               env:
-                HTML_URLS: ${{ github.event.*.html_url }}
-                JOINED_URLS: ${{ join(env.HTML_URLS, ',') }}
+                # HTML_URLS: ${{ github.event.*.html_url }}
+                JOINED_URLS: ${{ join(github.event.*.html_url, ',') }}
               run: echo "${JOINED_URLS}"
 
             - name: Use ToJson Function
