@@ -25,4 +25,4 @@ jobs:
               uses: actions/checkout@v5
               env:
                 HASH: ${{ hashFiles('.github/workflows/*.yaml') }}
-                run: echo "Hash of workflow files: ${HASH}"
+              run: echo "Hash of workflow files: ${HASH}"
