@@ -4,6 +4,9 @@ jobs:
     function-job:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout code
+              uses: actions/checkout@v5
+
             - name: Use Contains Function
               env:
                 LABEL: ${{ github.event.issue.labels.*.name }}
@@ -22,7 +25,6 @@ jobs:
               run: echo "${PAYLOAD}"
             
             - name: Use Hash Function
-              uses: actions/checkout@v5
               env:
                 HASH: ${{ hashFiles('.github/workflows/*.yaml') }}
               run: echo "Hash of workflow files ${HASH}"
