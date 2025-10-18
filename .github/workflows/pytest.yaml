@@ -3,7 +3,7 @@ name: Run Pytest
 on:
     push:
         branches: ["main"]
-        paths: ["python/**/*.py"]
+        paths: ["python/**/*.py", "pytest.yaml"]
 
 jobs:
     test:
