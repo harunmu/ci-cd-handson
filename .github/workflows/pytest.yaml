@@ -3,8 +3,7 @@ name: Run Pytest
 on:
     push:
         branches: ["main", "prRequestTest"]
-        paths: ["python/**/*.py", "pytest.yaml"]
-
+        
 jobs:
     test:
         runs-on: ubuntu-latest
