@@ -1,0 +1,23 @@
+name: Multi Job Workflow
+
+on: [push]
+
+jobs:
+    first:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run First Job 
+              run: echo "Running First Job"
+    
+    second:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run Second Job 
+              run: echo "Running Second Job"
+
+    third:
+        runs-on: ubuntu-latest
+        needs: [first, second]
+        steps:
+            - name: Run Third Job
+              run: echo "Running Third Job"
