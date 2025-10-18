@@ -1,9 +1,10 @@
 name: Run Pytest
 
 on:
-    push:
+    pull_request:
         branches: ["main", "prRequestTest"]
-        
+        paths: ["python/**/*.py", ".github/workflows/pytest.yaml"]
+
 jobs:
     test:
         runs-on: ubuntu-latest
