@@ -24,4 +24,4 @@ jobs:
 
             - name: Run static analysis
               run: |
-                docker run --rm -v "$(pwd):$(pwd)" -w"$(pwd)" rhysd/actionlint:latest"
+                docker run --rm -v "$(pwd):$(pwd)" -w"$(pwd)" rhysd/actionlint:latest
