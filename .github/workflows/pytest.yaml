@@ -1,7 +1,7 @@
 name: Run Pytest
 
 on:
-    push:
+    pull_request:
         branches: ["main", "prRequestTest"]
         paths: ["python/**/*.py", ".github/workflows/pytest.yaml"]
 
@@ -22,4 +22,5 @@ jobs:
               run: pip install -r python/requirements.txt
 
             - name: Run pytest
+              working-directory: python
               run: pytest
