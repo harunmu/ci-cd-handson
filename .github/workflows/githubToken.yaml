@@ -2,12 +2,12 @@ name: GitHub Token Example
 
 on:
     pull_request:
-        branches:[main]
+        branches: [main]
 
 jobs:
     comment:
         runs-on: ubuntu-latest
-        
+
         permissions:
             pull-requests: write
             contents: read
