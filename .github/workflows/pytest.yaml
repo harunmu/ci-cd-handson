@@ -1,0 +1,25 @@
+name: Run Pytest
+
+on:
+    pull_request:
+        branches: ["main"]
+        paths: ["python/**/*.py", "pytest.yaml"]
+
+jobs:
+    test:
+        runs-on: ubuntu_latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+
+            -name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: 3.13
+            
+            - name: Install dependencies
+              run: pip install -r python/requirements.txt
+
+            - name: Run pytest
+              run: pytest
