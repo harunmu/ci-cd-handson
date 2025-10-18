@@ -2,20 +2,21 @@ name: GitHub Token Example
 
 on:
     pull_request:
-        branches:[main]
+        branches: [main]
 
 jobs:
     comment:
-        runs-on:ubuntu-latest
+        runs-on: ubuntu-latest
+
         permissions:
             pull-requests: write
             contents: read
+
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
         steps:
             - uses: actions/checkout@v5
-
-            - env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
             - name: comment on PR
               run: gh pr comment "$GITHUB_HEAD_REF" --body "Hello, $GITHUB_ACTOR"
