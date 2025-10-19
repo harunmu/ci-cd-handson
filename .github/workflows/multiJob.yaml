@@ -29,4 +29,4 @@ jobs:
           RESULT: ${{ needs.first.outputs.result }}
         steps:
             - name: Run Third Job
-              run: echo "${RESULT} Running Third Job
+              run: echo "${RESULT} Running Third Job"
