@@ -1,0 +1,16 @@
+name: Matrix Workflow
+
+on: push
+
+jobs:
+    print:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+
+        runs-on: ${{ matrix.os }}
+        
+        steps:
+            - name: Print OS
+              run: echo "Running on ${RUNNER_OS}"
+              shell: bash
