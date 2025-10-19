@@ -1,6 +1,8 @@
 name: Matrix Workflow
 
-on: push
+on: 
+    push:
+      branches: ["prRequestTest"]
 
 jobs:
     print:
@@ -9,7 +11,7 @@ jobs:
                 os: [ubuntu-latest, windows-latest, macos-latest]
 
         runs-on: ${{ matrix.os }}
-        
+
         steps:
             - name: Print OS
               run: echo "Running on ${RUNNER_OS}"
