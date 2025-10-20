@@ -1,0 +1,12 @@
+name: Check Workspace Name
+
+on: push
+
+jobs:
+  check-workspace-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Verify workspace name
+        run: echo "${GITHUB_WORKSPACE}"
