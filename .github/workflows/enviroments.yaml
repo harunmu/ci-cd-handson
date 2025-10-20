@@ -1,0 +1,21 @@
+naem: Enviroments Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        type: environment
+        default: test
+        required: true
+        ddescription: Environment name
+
+jobs:
+  print-environment-value
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
+    env:
+      USERNAMNE: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+    steps:
+      -name Print Environment Values
+        run: echo "${USERNAMNE} - ${PASSWORD}"
