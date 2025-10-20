@@ -17,5 +17,5 @@ jobs:
       USERNAMNE: ${{ vars.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      -name Print Environment Values
+      - name: Print Environment Values
         run: echo "${USERNAMNE} - ${PASSWORD}"
