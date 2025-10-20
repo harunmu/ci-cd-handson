@@ -20,7 +20,10 @@ runs:
   using: composite
   steps:
     - name: Print ENV sorting by name
-      run: printenv | sort
+      run: |
+        echo "::group::Environment Variables"
+        printenv | sort
+        echo "::endgroup::"
       shell: bash
 
     - name: Print context
