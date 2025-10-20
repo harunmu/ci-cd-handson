@@ -1,4 +1,4 @@
-naem: Enviroments Workflow
+name: Enviroments Workflow
 
 on:
   workflow_dispatch:
