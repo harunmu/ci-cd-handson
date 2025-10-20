@@ -1,21 +1,21 @@
-name: Enviroments Workflow
+# name: Enviroments Workflow
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment-name:
-        type: environment
-        default: test
-        required: true
-        description: Environment name
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       environment-name:
+#         type: environment
+#         default: test
+#         required: true
+#         description: Environment name
 
-jobs:
-  print-environment-value:
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.environment-name }}
-    env:
-      USERNAME: ${{ vars.USERNAME }}
-      PASSWORD: ${{ secrets.PASSWORD }}
-    steps:
-      - name: Print Environment Values
-        run: echo "${USERNAME} - ${PASSWORD}"
+# jobs:
+#   print-environment-value:
+#     runs-on: ubuntu-latest
+#     environment: ${{ inputs.environment-name }}
+#     env:
+#       USERNAME: ${{ vars.USERNAME }}
+#       PASSWORD: ${{ secrets.PASSWORD }}
+#     steps:
+#       - name: Print Environment Values
+#         run: echo "${USERNAME} - ${PASSWORD}"
