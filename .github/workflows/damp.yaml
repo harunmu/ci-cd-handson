@@ -1,0 +1,21 @@
+name: Dump
+
+on: push
+
+jobs:
+    debug:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+
+            - name: Run dump action
+              uses: ./.github/actions/dump
+              id: dump
+              with:
+                enable-context: "true"
+            
+            - name: Show dumped date
+              env:
+                DATE: ${{ steps.dump.outputs.dumped-date }}
+              run: echo "${DATE}"
