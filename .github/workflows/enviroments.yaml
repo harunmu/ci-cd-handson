@@ -7,10 +7,10 @@ on:
         type: environment
         default: test
         required: true
-        ddescription: Environment name
+        description: Environment name
 
 jobs:
-  print-environment-value
+  print-environment-value:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment-name }}
     env:
