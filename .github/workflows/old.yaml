@@ -8,4 +8,4 @@ jobs:
 
         steps:
             - name: Setup old go action
-              uses: actions/setup-go@v4
+              uses: actions/setup-go@v5
