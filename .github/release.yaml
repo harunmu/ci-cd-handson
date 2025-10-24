@@ -1,0 +1,10 @@
+category:
+  categories:
+    - title: Enhancement
+      labels:
+        - Enhancement
+
+    - title: Bug Fix
+      labels:
+        - Bug
+        - Fixes
