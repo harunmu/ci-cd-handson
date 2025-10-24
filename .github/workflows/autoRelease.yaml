@@ -18,6 +18,6 @@ jobs:
               uses: actions/checkout@v5
             - name: Create relase notes
               run: |
-                gh release create $VERSION --title "${VERSION}" --generate-notes
+                gh release create "${VERSION}"" --title "${VERSION}" --generate-notes
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
