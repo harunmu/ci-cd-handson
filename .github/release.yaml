@@ -2,9 +2,9 @@ category:
   categories:
     - title: Enhancement
       labels:
-        - Enhancement
+        - enhancement
 
     - title: Bug Fix
       labels:
-        - Bug
-        - Fixes
+        - bug
+        - fixes
