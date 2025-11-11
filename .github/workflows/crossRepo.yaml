@@ -20,7 +20,7 @@ jobs:
             - name: checkout repository
               uses: actions/checkout@v5
               with:
-                repository: ${{ github.repository.owner }}/${{ env.TARGET_REPO }}
+                repository: ${{ github.repository_owner }}/${{ env.TARGET_REPO }}
                 path: ${{ env.TARGET_REPO }}
                 token: ${{ steps.create.outputs.token }}
 
