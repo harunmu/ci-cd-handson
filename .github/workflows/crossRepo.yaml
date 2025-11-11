@@ -1,0 +1,28 @@
+name: Cross Repo
+
+on: push
+
+env:
+    TARGET_REPO: create-pr-action
+
+jobs:
+    checkout:
+        runs-on: ubuntu-latest
+        steps:
+            - name: create github apps token
+              id: create
+              uses: actions/create-github-app-token@v2
+              with:
+                app-id: ${{ secrets.APP_ID}}
+                private-key: ${{ secrets.PRIVATE_KEY}}
+                repositories: ${{ env.TARGET_REPO}}
+
+            - name: checkout repository
+              uses: actions/checkout@v5
+              with:
+                repository: ${{ github.repository.owner }}/${{ env.TARGET_REPO }}
+                path: ${{ env.TARGET_REPO }}
+                token: ${{ steps.create.outputs.token }}
+
+            - name: preview other repository file
+              run: cat "${TARGET_REPO}/README.md"
