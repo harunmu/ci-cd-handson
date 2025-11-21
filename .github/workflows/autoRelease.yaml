@@ -15,7 +15,7 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v5
+              uses: actions/checkout@v6
             - name: Create relase notes
               run: |
                 gh release create "${VERSION}" --title "${VERSION}" --generate-notes
